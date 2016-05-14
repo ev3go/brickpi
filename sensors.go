@@ -121,7 +121,7 @@ func SensorFor(port, driver string) (*ev3dev.Sensor, error) {
 	return s, err
 }
 
-// Unregister set the lego-port mode to "none".
+// Unregister sets the lego-port mode to "none".
 func Unregister(port string) error {
 	p, err := ev3dev.LegoPortFor(port, portDriver)
 	if err != nil {
