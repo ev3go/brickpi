@@ -125,9 +125,7 @@ func SensorFor(port, driver string) (*ev3dev.Sensor, error) {
 func Unregister(port string) error {
 	p, err := ev3dev.LegoPortFor(port, portDriver)
 	if err != nil {
-		if _, ok := err.(ev3dev.DriverMismatch); !ok {
-			return err
-		}
+		return err
 	}
 	return p.SetMode("none").Err()
 }
