@@ -39,6 +39,8 @@ var modeLookup = map[string]mode{
 	// The documentation at http://www.ev3dev.org/docs/ports/brickpi-in-port/
 	// says that setting the mode to nxt-i2c should be associated with
 	// a write to set_device. This second write fails with EINVAL.
+	//
+	// See https://github.com/ev3dev/ev3dev/issues/640
 	"nxt-i2c":            mode{"nxt-i2c", true},
 	"pixy-lego":          mode{"nxt-i2c", true},
 	"ht-nxt-color":       mode{"nxt-i2c", true},
