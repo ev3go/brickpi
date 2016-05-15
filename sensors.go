@@ -7,7 +7,7 @@ package brickpi
 import (
 	"fmt"
 
-	"github.com/ev3go/ev3/ev3dev"
+	"github.com/ev3go/ev3dev"
 )
 
 const portDriver = "brickpi-in-port"

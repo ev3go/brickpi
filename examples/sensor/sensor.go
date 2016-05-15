@@ -18,7 +18,7 @@ import (
 	"strconv"
 
 	"github.com/ev3go/brickpi"
-	"github.com/ev3go/ev3/ev3dev"
+	"github.com/ev3go/ev3dev"
 )
 
 func main() {
