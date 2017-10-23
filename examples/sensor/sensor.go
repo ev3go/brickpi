@@ -36,20 +36,9 @@ func main() {
 	}
 	defer brickpi.Unregister(*port)
 
-	n, err := s.NumValues()
-	if err != nil {
-		log.Fatalf("failed to get number of values available: %v", err)
-	}
-
-	u, err := s.Units()
-	if err != nil {
-		log.Fatalf("failed to get units: %v", err)
-	}
-
-	d, err := s.Decimals()
-	if err != nil {
-		log.Fatalf("failed to get number of decimal places: %v", err)
-	}
+	n := s.NumValues()
+	u := s.Units()
+	d := s.Decimals()
 
 	addr, err := ev3dev.AddressOf(s)
 	if err != nil {
