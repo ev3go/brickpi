@@ -30,7 +30,7 @@ var (
 // brickPiLED is a fmt.Stringer LED name for the BrickPi LEDs.
 type brickPiLED int
 
-func (l brickPiLED) String() string { return fmt.Sprintf("brickpi:led%d:blue:ev3dev", l) }
+func (l brickPiLED) String() string { return fmt.Sprintf("led%d:blue:brick-status", l) }
 
 // raspberryPiLED is a fmt.Stringer LED name for the Raspberry Pi LEDs.
 type raspberryPiLED int
