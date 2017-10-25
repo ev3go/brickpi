@@ -86,11 +86,17 @@ var deviceLookup = map[string]device{
 // When the sensor is no longer being used, Unregister should be called
 // for the port.
 //
-// BrickPi sensor port names are:
+// BrickPi and BrickPi+ sensor port names are:
 //  - ttyAMA0:S1
 //  - ttyAMA0:S2
 //  - ttyAMA0:S3
 //  - ttyAMA0:S4
+//
+// BrickPi3 sensor port names are:
+//  - spi0.1:S1
+//  - spi0.1:S2
+//  - spi0.1:S3
+//  - spi0.1:S4
 func SensorFor(port, driver string) (*ev3dev.Sensor, error) {
 	dev, ok := deviceLookup[driver]
 	if !ok {
