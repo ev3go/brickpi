@@ -23,7 +23,7 @@ import (
 
 func main() {
 	driver := flag.String("driver", "", "specify the sensor driver name (required)")
-	port := flag.String("port", "ttyAMA0:S1", "specify the port for the sensor")
+	port := flag.String("port", "serial0-0:S1", "specify the port for the sensor")
 	flag.Parse()
 	if *driver == "" {
 		flag.Usage()
