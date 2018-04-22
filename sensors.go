@@ -87,10 +87,10 @@ var deviceLookup = map[string]device{
 // for the port.
 //
 // BrickPi and BrickPi+ sensor port names are:
-//  - ttyAMA0:S1
-//  - ttyAMA0:S2
-//  - ttyAMA0:S3
-//  - ttyAMA0:S4
+//  - serial0-0:S1
+//  - serial0-0:S2
+//  - serial0-0:S3
+//  - serial0-0:S4
 //
 // BrickPi3 sensor port names are:
 //  - spi0.1:S1
