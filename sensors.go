@@ -138,7 +138,10 @@ func sensorFor(port, mode, driver string, setDev bool, addr int) (*ev3dev.Sensor
 		}
 	}
 
-	s, err := ev3dev.SensorFor(fmt.Sprintf("%s:i2c%d", port, addr), driver)
+	if mode == "nxt-i2c" {
+		port = fmt.Sprintf("%s:i2c%d", port, addr)
+	}
+	s, err := ev3dev.SensorFor(port, driver)
 	if err != nil {
 		p.SetMode("none")
 		return nil, err
