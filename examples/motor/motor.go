@@ -1,4 +1,4 @@
-// Copyright ©2016 The ev3go Authors. All rights reserved.
+// Copyright ©2021 The ev3go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
@@ -9,26 +9,26 @@
 package main
 
 import (
-	"fmt"
 	"log"
 
 	"github.com/ev3go/ev3dev"
 )
 
+const (
+	// motorDriver is the default BrickPi motorDriver. For details, see
+	// http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-stretch/brickpi.html#output-ports
+	motorDriver = "lego-nxt-motor"
+
+	// motorPortPrefix is the prefix for BrickPi output port addresses. The
+	// prefix must have the specific port appended. Posts can be  A, B, C or D,
+	// corresponding to the BrickPi output ports MA, MB, MC and MD.
+	motorPortPrefix = "serial0-0:M"
+)
+
 func main() {
-	// Motor driver .This value works for both nxt and ev3 large motor
-	motorDriver := "lego-nxt-motor"
 
-	// Prefix string for all motor ports when using brickpi
-	motorPortStringPrefix := "serial0-0:M"
+	m, err := ev3dev.TachoMotorFor(motorPortPrefix+"A", motorDriver)
 
-	// Motor Port can be A, B, C or D, corresponding to the brickpi output ports MA,MB,MC and MD
-	motorPort := "A"
-
-	// motorPortString is of the format serial0-0:MA, serial0-0:MB etc
-	motorPortString := fmt.Sprintf("%s%s", motorPortStringPrefix, motorPort)
-
-	m, err := ev3dev.TachoMotorFor(motorPortString, motorDriver)
 	if err != nil {
 		log.Fatalf("failed to find motor port: %v", err)
 	}
