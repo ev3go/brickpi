@@ -26,9 +26,7 @@ const (
 )
 
 func main() {
-
 	m, err := ev3dev.TachoMotorFor(motorPortPrefix+"A", motorDriver)
-
 	if err != nil {
 		log.Fatalf("failed to find motor port: %v", err)
 	}
@@ -38,7 +36,6 @@ func main() {
 		SetStopAction("hold").
 		Command("run-to-rel-pos").
 		Err()
-
 	if err != nil {
 		log.Fatalf("error during motor operation: %v", err)
 	}
